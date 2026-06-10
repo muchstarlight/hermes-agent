@@ -56,6 +56,7 @@ class TestCodingSelection:
         _git_init(tmp_path)
         cfg = {"agent": {"coding_context": "on"}}
         out = cc.coding_selection(platform="cli", cwd=tmp_path, config=cfg)
+        assert out is not None
         assert out[0] == cc.CODING_TOOLSET
 
     def test_none_when_inactive(self, tmp_path):
